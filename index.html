@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img { width:200px; 
+	height:155px; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    var baseURL = "http://192.168.0.2"
+    var USER = "OWTcRdgFq7YJIpecsxLx2tBq7rKBMvXHdYSYKiGEk"
+    $("#light_1_off").click(function(){
+	var URL = baseURL + "/api/" + USER + "/lights/1/state"
+	var dataObject = { 'on': false };
+        $.ajax({
+		url: URL,
+		type: 'PUT',
+		data: JSON.stringify(dataObject),
+		dataType: 'application/json',
+		success: function(result){
+		alert("Success?")
+        	}
+	  })
+    });
+
+    $("#light_1_on").click(function(){
+        var URL = baseURL + "/api/" + USER + "/lights/1/state"
+        var dataObject = { 'on': true };
+        $.ajax({
+                url: URL,
+                type: 'PUT',
+                data: JSON.stringify(dataObject),
+                dataType: 'application/json',
+                success: function(result){
+                alert("Success?")
+                }
+          })
+    });
+
+
+    $("#light_2_off").click(function(){
+        var URL = baseURL + "/api/" + USER + "/lights/2/state"
+        var dataObject = { 'on': false };
+        $.ajax({
+                url: URL,
+                type: 'PUT',
+                data: JSON.stringify(dataObject),
+                dataType: 'application/json',
+                success: function(result){
+                alert("Success?")
+                }
+          })
+    });
+
+    $("#light_2_on").click(function(){
+        var URL = baseURL + "/api/" + USER + "/lights/2/state"
+        var dataObject = { 'on': true};
+        $.ajax({
+                url: URL,
+                type: 'PUT',
+                data: JSON.stringify(dataObject),
+                dataType: 'application/json',
+                success: function(result){
+                alert("Success?")
+                }
+          })
+    });
+
+    $("#light_3_off").click(function(){
+        var URL = baseURL + "/api/" + USER + "/lights/3/state"
+        var dataObject = { 'on': false };
+        $.ajax({
+                url: URL,
+                type: 'PUT',
+                data: JSON.stringify(dataObject),
+                dataType: 'application/json',
+                success: function(result){
+                alert("Success?")
+                }
+          })
+    });
+
+    $("#light_3_on").click(function(){
+        var URL = baseURL + "/api/" + USER + "/lights/3/state"
+        var dataObject = { 'on': true };
+        $.ajax({
+                url: URL,
+                type: 'PUT',
+                data: JSON.stringify(dataObject),
+                dataType: 'application/json',
+                success: function(result){
+                alert("Success?")
+                }
+          })
+    });
+});
+</script>
+</head>
+<body>
+
+<button id="light_1_off"><img src="basic_light_unlit.jpeg"></br>Light 1 off</button>
+<button id="light_1_on"><img src="basic_light_lit.jpeg"></br>Light 1 on</button>
+</br>
+<button id="light_2_off"><img src="basic_light_unlit.jpeg"></br>Light 2 off</button>
+<button id="light_2_on"><img src="basic_light_lit.jpeg"></br>Light 2 on</button>
+</br>
+<button id="light_3_off"><img src="hue_light_strip_unlit.jpeg"></br>Light 3 off</button>
+<button id="light_3_on"><img src="hue_light_strip_lit.jpeg"></br>Light 3 on</button>
+</br>
+</body>
+</html>
+
